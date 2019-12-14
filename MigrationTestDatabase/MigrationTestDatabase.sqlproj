@@ -54,7 +54,30 @@
   </PropertyGroup>
   <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\4tecture\CustomSSDTMigrationScripts.props" />
   <ItemGroup>
     <Folder Include="Properties" />
+    <Folder Include="Scripts" />
+    <Folder Include="Tables" />
+    <Folder Include="Scripts\PostScripts" />
+    <Folder Include="Scripts\PreScripts" />
+    <Folder Include="Scripts\ReferenceDataScripts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Tables\DemoTable.sql" />
+    <Build Include="Tables\_MigrationScriptsHistory.sql" />
+    <None Include="Scripts\PostScripts\PostScript2.sql" />
+    <None Include="Scripts\PreScripts\PreScript2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Scripts\Script.PostDeployment.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PreDeploy Include="Scripts\Script.PreDeployment.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Scripts\PostScripts\PostScript1.sql" />
+    <None Include="Scripts\PreScripts\PreScript1.sql" />
+    <None Include="ssdt.migration.scripts.json" />
   </ItemGroup>
 </Project>

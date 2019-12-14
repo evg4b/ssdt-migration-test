@@ -1,2 +1,6 @@
 ﻿MigrationTestDatabase/obj
 .vs
+MigrationTestDatabase/bin
+*ScriptsGenerated.sql
+*.dbmdl
+*.jfm

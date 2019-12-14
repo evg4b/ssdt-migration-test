@@ -1,0 +1,6 @@
+﻿CREATE TABLE [dbo].[DemoTable]
+(
+	[Id] INT NOT NULL PRIMARY KEY, 
+    [Count] BIGINT NOT NULL DEFAULT 0, 
+    [Name] NCHAR(255) NOT NULL
+)
